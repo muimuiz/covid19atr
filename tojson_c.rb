@@ -276,6 +276,7 @@ LocalEnNameTable = {
   'Hong Kong SAR' => 'Hong Kong',
   'Iran' => 'Iran, Islamic Republic of',
   'Iran (Islamic Republic of)' => 'Iran, Islamic Republic of',
+  'Laos' => 'Lao People\'s Democratic Republic',
   'Macao SAR' => 'Macau',
   'Mainland China' => 'China',
   'Moldova' => 'Moldova, Republic of',
@@ -339,11 +340,13 @@ LocalRegionCTable = {
 }
 
 def get_continent(en_name_, region_)
+  continent = nil
   if    LocalRegionTable.has_key?(region_)
     continent = LocalRegionTable[region_]
   elsif LocalRegionCTable.has_key?(en_name_)
     continent = LocalRegionCTable[en_name_]
   end
+  return continent
 end
 
 LocalStyleTypeTable = {
